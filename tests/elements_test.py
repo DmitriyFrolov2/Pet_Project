@@ -2,7 +2,6 @@ import time
 
 from pages.elements_page import TextBoxPage
 
-
 class TestElements:
     class TestTextBox:
         def test_text_box(self, driver):
