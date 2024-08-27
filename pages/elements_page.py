@@ -12,4 +12,12 @@ class TextBoxPage(BasePage):
         self.element_is_visible(self.locators.CURRENT_ADDRESS).send_keys('4343')
         self.element_is_visible(self.locators.PERMANENT_ADDRESS).send_keys('p433ss')
         self.element_is_visible(self.locators.SUBMIT).click()
-        time.sleep(5)
+
+
+
+    def check_filled_form(self):
+        full_name = self.element_is_visible(self.locators.CREATED_FULL_NAME).text.split(':')[1]
+        email = self.element_is_visible(self.locators.CREATED_EMAIL).text.split(':')[1]
+        current_address = self.element_is_visible(self.locators.CREATED_CURRENT_ADDRESS).text.split(':')[1]
+        permanent_address = self.element_is_visible(self.locators.CREATED_PERMANENT_ADDRESS).text.split(':')[1]
+        return full_name, email, current_address, permanent_address
