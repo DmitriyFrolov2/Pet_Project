@@ -8,7 +8,6 @@ This is a training project to demonstrate my skills in automation testing using 
 - [Technologies Used](#technologies-used)
 - [Setup](#setup)
 - [Running the Tests](#running-the-tests)
-- 
 
 ## Introduction
 
@@ -31,19 +30,25 @@ To set up the project, follow these steps:
    cd your-repository
 
 2. **Create a virtual environment**:
+   ```sh
    python -m venv venv
 
 3. **Activate the virtual environment**:
+   
    On Windows:
-
+   ```sh
    venv\Scripts\activate
-
+   ```
    On macOS and Linux:
-
+   ```sh
    source venv/bin/activate
-4.  **Install the dependencies**:
+   
+4. **Install the dependencies**:
+   ```sh
    pip install -r requirements.txt
 
-## Running the Tests
-   To run the tests, use the following command:
+##  Running the Tests
+   Running all tests in the current directory:
+   ```sh
    pytest
+
