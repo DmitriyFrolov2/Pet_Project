@@ -72,7 +72,7 @@ class RadioButtonPage(BasePage):
     def click_radio_button(self, choice):
         choices = {'yes': self.locators.YES_RADIOBUTTON,
                    'impressive': self.locators.IMPRESSIVE_RADIOBUTTON,
-                   'no': self.locators.NO_RADIOBUTTON}
+                   }
         self.element_is_visible(choices[choice]).click()
 
     def get_output_result(self):

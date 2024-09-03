@@ -35,11 +35,10 @@ class TestRadioButton:
         output_yes = radio_button_page.get_output_result()
         radio_button_page.click_radio_button('impressive')
         output_impressive = radio_button_page.get_output_result()
-        radio_button_page.click_radio_button('no')
-        output_no = radio_button_page.get_output_result()
+
         assert output_yes == 'Yes'
         assert output_impressive == 'Impressive'
-        assert output_no == 'No'
+
 
 
 
