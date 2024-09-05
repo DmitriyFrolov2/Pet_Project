@@ -1,5 +1,7 @@
 import time
 
+import pytest
+
 from pages.elements_page import TextBoxPage, CheckBoxPage, RadioButtonPage, WebTablePage
 
 
@@ -28,24 +30,27 @@ class TestCheckBox:
         assert input_checkbox == output_result, 'checkboxes have not been selected'
 
 class TestRadioButton:
-    def test_radio_button(self, driver):
+    @pytest.mark.parametrize('selection', ('yes', 'impressive'))
+    def test_radio_button(self, selection, driver):
         radio_button_page = RadioButtonPage(driver, 'https://demoqa.com/radio-button')
         radio_button_page.open()
-        radio_button_page.click_radio_button('yes')
-        output_yes = radio_button_page.get_output_result()
-        radio_button_page.click_radio_button('impressive')
-        output_impressive = radio_button_page.get_output_result()
 
-        assert output_yes == 'Yes'
-        assert output_impressive == 'Impressive'
+        radio_button_page.click_radio_button(selection)
+        output = radio_button_page.get_output_result()
+
+        assert output == selection.capitalize()  # Должно быть с большой буквы
+
 
 class TestWebTable:
 
     def test_web_table_add_person(self, driver):
         web_table_page = WebTablePage(driver, 'https://demoqa.com/webtables')
         web_table_page.open()
-        web_table_page.add_new_person()
-        time.sleep(3)
+        new_person = web_table_page.add_new_person()
+        table_result = web_table_page.check_new_added_person()
+        print(new_person)
+        print(table_result)
+        assert new_person in table_result
 
 
 
