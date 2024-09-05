@@ -19,6 +19,7 @@ This project is a collection of automated tests for the [DemoQA](https://demoqa.
 - **pytest**: ~8.3.2
 - **selenium**: ~4.23.1
 - **Faker**: ~28.0.0
+- **webdriver-manager**: ~=4.0.2
 
 ## Setup
 
